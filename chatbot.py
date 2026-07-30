@@ -9,7 +9,7 @@ documents = SimpleDirectoryReader("./data2/").load_data()
 
 Settings.llm = Groq(
     model="llama-3.3-70b-versatile",
-    api_key="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",
+    api_key="",
     temperature=0
 )
 

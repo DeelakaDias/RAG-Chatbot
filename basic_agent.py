@@ -10,7 +10,7 @@ from llama_index.tools.yahoo_finance import YahooFinanceToolSpec
 
 
 MODEL_NAME = "llama-3.3-70b-versatile"
-API_KEY = "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"
+API_KEY = ""
 EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
 KNOWLEDGE_SOURCE_PATH = "./data2/"
 CHUNK_SIZE = 512

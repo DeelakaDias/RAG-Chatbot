@@ -5,7 +5,7 @@ def chat_qa(prompt):
     # Initialize the Groq model with the temperature parameter
     llm = Groq(
         model = "llama-3.3-70b-versatile",
-        api_key = "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",
+        api_key = "",
         temperature = 0
     )
     #prompt = "How to make milkrice"
