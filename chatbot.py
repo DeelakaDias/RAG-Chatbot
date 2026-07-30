@@ -1,16 +1,26 @@
 import streamlit as st
 from llama_index.llms.groq import Groq
-
-from llama_index.core.node_parser import SimpleDirectoryReader, VectorStoreIndex
+from llama_index.core import SimpleDirectoryReader, VectorStoreIndex, Settings
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-from llama_index.core import Settings
 
-documents = SimpleDirectoryReader('./data/').load_data()
+
+documents = SimpleDirectoryReader("./data2/").load_data()
+
 Settings.llm = Groq(
-        model = "Llama3-8b-8192",
-        api_key = "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",
-        temperature = 0
-    )
+    model="llama-3.3-70b-versatile",
+    api_key="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",
+    temperature=0
+)
 
-Settings.embed_model = HuggingFaceEmbedding(model_name = "BAAI.bge-small-ev-v1.5")
+Settings.embed_model = HuggingFaceEmbedding(
+    model_name="BAAI/bge-small-en-v1.5"
+)
+
+Settings.node_parser = SentenceSplitter(chunk_size=512, chunk_overlap=20)
+
+index = VectorStoreIndex.from_documents(documents)
+query_engine = index.as_query_engine()
+
+response = query_engine.query("Summarize the documents")
+print(response)
