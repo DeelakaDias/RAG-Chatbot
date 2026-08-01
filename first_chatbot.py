@@ -6,7 +6,7 @@ def chat_qa(prompt):
     llm = Groq(
         model = "llama-3.3-70b-versatile",
         api_key = "",
-        temperature = 0
+        temperature = 1
     )
     #prompt = "How to make milkrice"
     
@@ -16,7 +16,7 @@ def chat_qa(prompt):
     return response
 
 
-st.title(f"**My AI :green[Chatbot]** :sparkles:")  # Add emojis and colors to the title
+st.title(f"**:green[Alezen]** 🤖")  # Add emojis and colors to the title
 
 # Initialize chat history
 if "messages" not in st.session_state:

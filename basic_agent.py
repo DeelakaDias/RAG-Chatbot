@@ -10,7 +10,7 @@ from llama_index.tools.yahoo_finance import YahooFinanceToolSpec
 
 
 MODEL_NAME = "llama-3.3-70b-versatile"
-API_KEY = ""
+API_KEY = ""  # Replace with your actual API key
 EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
 KNOWLEDGE_SOURCE_PATH = "./data2/"
 CHUNK_SIZE = 512
@@ -78,7 +78,7 @@ agent = ReActAgent(
 
 async def main():
     response = await agent.run(
-        "What skills are mentioned in the document?"
+        "Who is the module leader ?"
     )
     print(response)
 
